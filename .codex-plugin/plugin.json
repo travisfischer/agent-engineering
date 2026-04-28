@@ -1,0 +1,32 @@
+{
+  "name": "agent-engineering",
+  "version": "0.1.0",
+  "description": "Installable workflow and skill package for coding-agent engineering principles, principle-based reviews, planning workflows, and AI-native engineering practices.",
+  "author": {
+    "name": "Agent Engineering Contributors"
+  },
+  "license": "MIT",
+  "keywords": [
+    "skills",
+    "workflow",
+    "code-review",
+    "planning",
+    "agents",
+    "ai-engineering"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Agent Engineering",
+    "shortDescription": "Principles, planning, and review workflows",
+    "longDescription": "Use Agent Engineering to install shared planning, review, brainstorm, PR feedback, and release-oriented workflows backed by principle documents and configurable review presets.",
+    "developerName": "Agent Engineering Contributors",
+    "category": "Coding",
+    "capabilities": [
+      "Interactive",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "Use Agent Engineering to install principle-driven review workflows, planning workflows, and shared engineering guidance into this project."
+    ]
+  }
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Plan"
+  short_description: "Turn ideas into executable requirement docs"
+  default_prompt: "Use $plan-core to turn this request or brainstorm into a concrete requirement document with scope, risks, and validation."

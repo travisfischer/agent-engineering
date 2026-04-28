@@ -1,0 +1,4 @@
+interface:
+  display_name: "Principle Review"
+  short_description: "Run principle-based parallel reviews"
+  default_prompt: "Use $review-core to run the shared review workflow, apply the configured principle reviewers, and synthesize one review artifact."

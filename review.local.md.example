@@ -1,0 +1,25 @@
+---
+reviewers_include: []
+reviewers_exclude: []
+disable_default_specialists: false
+review_context: |
+  Add any repo-specific constraints, coding rules, review rules, or risk context here.
+---
+
+# Local Review Overrides
+
+Use this file to override the default reviewer registry for a specific host project.
+
+## Supported fields
+
+1. `reviewers_include`
+Exact reviewer IDs to add
+
+2. `reviewers_exclude`
+Exact reviewer IDs to skip
+
+3. `disable_default_specialists`
+If `true`, remove specialist reviewers added by defaults unless explicitly included
+
+4. `review_context`
+Extra text passed to each reviewer

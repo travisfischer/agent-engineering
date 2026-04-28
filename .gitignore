@@ -1,0 +1,7 @@
+review.local.md
+plans/brainstorms/*
+plans/requirements/*
+plans/reviews/*
+!plans/brainstorms/README.md
+!plans/requirements/README.md
+!plans/reviews/README.md

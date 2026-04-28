@@ -1,0 +1,4 @@
+interface:
+  display_name: "PR Feedback"
+  short_description: "Process review comments with focused fixes"
+  default_prompt: "Use $pr-feedback-core to process pull request feedback, implement valid fixes, and respond clearly to non-actioned comments."

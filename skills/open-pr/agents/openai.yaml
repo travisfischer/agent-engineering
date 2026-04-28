@@ -1,0 +1,4 @@
+interface:
+  display_name: "Open PR"
+  short_description: "Prepare a focused branch and open a high-signal PR"
+  default_prompt: "Use $open-pr-core to prepare branch state safely, create focused commits, run required checks, and open a pull request."

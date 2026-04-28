@@ -1,0 +1,4 @@
+interface:
+  display_name: "Brainstorm"
+  short_description: "Clarify scope and approaches before planning"
+  default_prompt: "Use $brainstorm-core to explore the problem, compare 2-3 approaches, and write a concise brainstorm artifact before planning."
