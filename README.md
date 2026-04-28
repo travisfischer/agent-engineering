@@ -13,18 +13,18 @@ It packages:
 
 This repo is structured as a plugin-style package:
 
-1. [`.codex-plugin/plugin.json`](/Users/stream/code/agent-engineering/.codex-plugin/plugin.json) defines the package manifest
-2. [skills/](/Users/stream/code/agent-engineering/skills) contains the canonical installable skills
-3. [agent-workflows/](/Users/stream/code/agent-engineering/agent-workflows) contains shared workflow contracts, templates, and checklists
-4. [docs/](/Users/stream/code/agent-engineering/docs) contains principle documents used directly by the review system
-5. [`.codex/`](/Users/stream/code/agent-engineering/.codex) and [`.claude/`](/Users/stream/code/agent-engineering/.claude) are the official runtime support surfaces
+1. [`.codex-plugin/plugin.json`](./.codex-plugin/plugin.json) defines the package manifest
+2. [`skills/`](./skills) contains the canonical installable skills
+3. [`agent-workflows/`](./agent-workflows) contains shared workflow contracts, templates, and checklists
+4. [`docs/`](./docs) contains principle documents used directly by the review system
+5. [`.codex/`](./.codex) and [`.claude/`](./.claude) are the official runtime support surfaces
 
 ## What This Package Supports
 
 ### Included
 
 1. Principle-based review workflows
-2. Review presets via [review.presets/](/Users/stream/code/agent-engineering/review.presets)
+2. Review presets via [`review.presets/`](./review.presets)
 3. Brainstorm workflow
 4. Planning workflow
 5. PR feedback workflow
@@ -60,8 +60,8 @@ In the source repo, those personas were separate reviewer prompts that acted lik
 
 The official runtime surfaces in this package are:
 
-1. [`.codex/`](/Users/stream/code/agent-engineering/.codex)
-2. [`.claude/`](/Users/stream/code/agent-engineering/.claude)
+1. [`.codex/`](./.codex)
+2. [`.claude/`](./.claude)
 
 The current default command names are:
 
@@ -135,7 +135,7 @@ Note:
 
 If the host repo includes the review workflow files and the referenced principle docs, the default review adapter will run all `mode=always` principle reviewers from:
 
-- [agent-workflows/review/reviewers.md](/Users/stream/code/agent-engineering/agent-workflows/review/reviewers.md)
+- [`agent-workflows/review/reviewers.md`](./agent-workflows/review/reviewers.md)
 
 Run:
 
@@ -156,10 +156,10 @@ This is the default contract. If a host project wants a different output path, u
 
 To narrow the active principle reviewers, copy one preset to `review.local.md` in the host repo:
 
-1. [review.presets/all-principles.md](/Users/stream/code/agent-engineering/review.presets/all-principles.md)
-2. [review.presets/minimal.md](/Users/stream/code/agent-engineering/review.presets/minimal.md)
-3. [review.presets/quality-and-security.md](/Users/stream/code/agent-engineering/review.presets/quality-and-security.md)
-4. [review.presets/llm-systems.md](/Users/stream/code/agent-engineering/review.presets/llm-systems.md)
+1. [`review.presets/all-principles.md`](./review.presets/all-principles.md)
+2. [`review.presets/minimal.md`](./review.presets/minimal.md)
+3. [`review.presets/quality-and-security.md`](./review.presets/quality-and-security.md)
+4. [`review.presets/llm-systems.md`](./review.presets/llm-systems.md)
 
 Then run:
 
@@ -170,7 +170,7 @@ Then run:
 
 Create `review.local.md` at the host repo root and use exact reviewer IDs from:
 
-- [agent-workflows/review/reviewers.md](/Users/stream/code/agent-engineering/agent-workflows/review/reviewers.md)
+- [`agent-workflows/review/reviewers.md`](./agent-workflows/review/reviewers.md)
 
 Example:
 
@@ -195,7 +195,7 @@ review_context: |
 1. Add the new principle document under:
    - `docs/how-we-build/`, or
    - `docs/core-principles/`
-2. Add a row to [agent-workflows/review/reviewers.md](/Users/stream/code/agent-engineering/agent-workflows/review/reviewers.md)
+2. Add a row to [`agent-workflows/review/reviewers.md`](./agent-workflows/review/reviewers.md)
 3. Use `reviewer_type: principle` and point `principle_doc` to the new file
 
 Example row:

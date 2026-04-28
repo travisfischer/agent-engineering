@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Check installer syntax
+        run: bash -n scripts/install.sh
+
+      - name: Dry-run installer
+        run: |
+          tmpdir="$(mktemp -d)"
+          mkdir -p "$tmpdir/repo"
+          ./scripts/install.sh --target "$tmpdir/repo" --dry-run --runtimes both --preset all-principles
+
+      - name: Check for local absolute paths
+        run: |
+          if grep -REn '/Users/|/home/|file://' README.md docs agent-workflows skills review.presets; then
+            echo "Found local absolute path references"
+            exit 1
+          fi
