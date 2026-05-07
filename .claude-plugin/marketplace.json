@@ -1,0 +1,30 @@
+{
+  "name": "agent-engineering",
+  "owner": {
+    "name": "Travis Fischer",
+    "url": "https://github.com/travisfischer"
+  },
+  "metadata": {
+    "description": "Workflows, principles, and review system for AI-native software teams.",
+    "version": "0.2.0"
+  },
+  "plugins": [
+    {
+      "name": "agent-engineering",
+      "description": "Brainstorm, plan, review, and ship with shared workflow contracts and principle-based reviewers.",
+      "author": {
+        "name": "Travis Fischer",
+        "url": "https://github.com/travisfischer"
+      },
+      "homepage": "https://github.com/travisfischer/agent-engineering",
+      "license": "MIT",
+      "tags": [
+        "workflows",
+        "code-review",
+        "engineering-principles",
+        "agent-native"
+      ],
+      "source": "./plugins/agent-engineering"
+    }
+  ]
+}

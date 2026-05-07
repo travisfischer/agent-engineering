@@ -1,0 +1,18 @@
+{
+  "name": "agent-engineering",
+  "version": "0.2.0",
+  "description": "Brainstorm, plan, review, and ship with shared workflow contracts and principle-based reviewers.",
+  "author": {
+    "name": "Travis Fischer",
+    "url": "https://github.com/travisfischer"
+  },
+  "homepage": "https://github.com/travisfischer/agent-engineering",
+  "repository": "https://github.com/travisfischer/agent-engineering",
+  "license": "MIT",
+  "keywords": [
+    "workflows",
+    "code-review",
+    "engineering-principles",
+    "agent-native"
+  ]
+}
