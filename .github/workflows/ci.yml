@@ -12,18 +12,28 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Check installer syntax
-        run: bash -n scripts/install.sh
-
-      - name: Dry-run installer
+      - name: Validate marketplace.json
         run: |
-          tmpdir="$(mktemp -d)"
-          mkdir -p "$tmpdir/repo"
-          ./scripts/install.sh --target "$tmpdir/repo" --dry-run --runtimes both --preset all-principles
+          jq -e . .claude-plugin/marketplace.json > /dev/null
+          jq -e '.plugins | length > 0' .claude-plugin/marketplace.json > /dev/null
+
+      - name: Validate plugin.json
+        run: jq -e . plugins/agent-engineering/.claude-plugin/plugin.json > /dev/null
+
+      - name: Verify plugin source exists
+        run: |
+          source=$(jq -r '.plugins[0].source' .claude-plugin/marketplace.json)
+          test -d "$source" || { echo "Plugin source $source not found"; exit 1; }
+
+      - name: Verify plugin name matches across manifests
+        run: |
+          mp_name=$(jq -r '.plugins[0].name' .claude-plugin/marketplace.json)
+          pl_name=$(jq -r '.name' plugins/agent-engineering/.claude-plugin/plugin.json)
+          test "$mp_name" = "$pl_name" || { echo "Name mismatch: marketplace=$mp_name plugin=$pl_name"; exit 1; }
 
       - name: Check for local absolute paths
         run: |
-          if grep -REn '/Users/|/home/|file://' README.md docs agent-workflows skills review.presets; then
+          if grep -REn '/Users/|/home/|file://' README.md plugins/agent-engineering; then
             echo "Found local absolute path references"
             exit 1
           fi
